@@ -1,19 +1,102 @@
-import React from 'react'
-
-export const Header = () => {
+import React from "react";
+import { GiFullPizza } from "react-icons/gi";
+const MobileNav = ({ open, setOpen }) => {
   return (
-    <div className='fixed md:h-16 h-14 w-screen bg-[#ae7100]'>
-      <ul className='flex flex-row items-center justify-end w-full h-full p-4'>
-        <li className='p-6 text-lg cursor-pointer text-white'>
+    <div
+      className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${
+        open ? "-translate-x-0" : "-translate-x-full"
+      } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
+    >
+      <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20">
+        {" "}
+        {/*logo container*/}
+        <a className="text-xl font-bold" href="/">
+          KPS
+        </a>
+      </div>
+      <div className="flex flex-col ml-4">
+        <a
+          className="text-xl font-medium my-4"
+          href="/about"
+          onClick={() =>
+            setTimeout(() => {
+              setOpen(!open);
+            }, 100)
+          }
+        >
           Home
-        </li>
-        <li className='p-6  text-lg cursor-pointer text-white'>
-          Products
-        </li>
-        <li className='p-6  text-lg cursor-pointer text-white'>
-          About
-        </li>
-      </ul>
+        </a>
+        <a
+          className="text-xl font-normal my-4"
+          href="/contact"
+          onClick={() =>
+            setTimeout(() => {
+              setOpen(!open);
+            }, 100)
+          }
+        >
+          Product
+        </a>
+        <a
+          className="text-xl font-normal my-4"
+          href="/contact"
+          onClick={() =>
+            setTimeout(() => {
+              setOpen(!open);
+            }, 100)
+          }
+        >
+          Contact us
+        </a>
+      </div>
     </div>
-  )
-}
+  );
+};
+export const Header = ({ open, setOpen }) => {
+  return (
+    <div className="fixed w-screen">
+      <nav className="flex filter drop-shadow-md bg-white px-4 py-4 h-20 items-center">
+        <MobileNav open={open} setOpen={setOpen} />
+        <div className="w-3/12 flex items-center">
+          <a className="text-lg font-bold" href="/">
+            KPS
+          </a>
+        </div>
+        <div className="w-9/12 flex justify-end items-center">
+          <div
+            className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden"
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            {/* hamburger button */}
+            <span
+              className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${
+                open ? "rotate-45 translate-y-3.5" : ""
+              }`}
+            />
+            <span
+              className={`h-1 w-full bg-black rounded-lg transition-all duration-300 ease-in-out ${
+                open ? "w-0" : "w-full"
+              }`}
+            />
+            <span
+              className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${
+                open ? "-rotate-45 -translate-y-3.5" : ""
+              }`}
+            />
+          </div>
+
+          <div className="hidden md:block">
+            <div className="flex gap-8 mr-4">
+            <a className="cursor-pointer">Home</a>
+            <a className="cursor-pointer">Product</a>
+            <a className="cursor-pointer">Countact</a>
+            <GiFullPizza className="cursor-pointer" size={30}/>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+};

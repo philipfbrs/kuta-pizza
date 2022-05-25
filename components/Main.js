@@ -6,9 +6,9 @@ export const Main = () => {
     <div className="mt-16 flex h-screen w-screen ">
       {" "}
       <div className="relative h-full w-full ">
-        <div className=" flex flex-col justify-center h-full w-full p-20 pb-64">
-          <h1 className="text-2xl -z-40">Welcome to </h1>
-          <h1 className="text-7xl -z-40 font-normal">Kuta's Pizza Shop</h1>
+        <div className="flex flex-col items-center md:items-start md:text-left justify-center text-center h-full w-full p-20 md:pb-64 ">
+          <h1 className="text-xl md:text-2xl -z-40">Welcome to </h1>
+          <h1 className="text-6xl md:text-7xl -z-40 font-normal">Kuta's Pizza Shop</h1>
         </div>
 
         <Blob className="absolute w-full -z-50 top-0 right-0 transform md:translate-x-1/4 md:-translate-y-[50%] translate-x-[30%] -translate-y-[30%] sm:translate-x-[25%] sm:-translate-y-[30%]" />
