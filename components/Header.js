@@ -91,7 +91,7 @@ export const Header = ({ open, setOpen }) => {
             <div className="flex gap-8 mr-4">
             <a className="cursor-pointer">Home</a>
             <a className="cursor-pointer">Product</a>
-            <a className="cursor-pointer">Countact</a>
+            <a className="cursor-pointer">Contact</a>
             <GiFullPizza className="cursor-pointer" size={30}/>
             </div>
           </div>
