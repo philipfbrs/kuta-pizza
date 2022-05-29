@@ -1,19 +1,26 @@
 import React from "react";
-import Blob from "../assets/blobs/blob.svg";
-import Blob1 from "../assets/blobs/blob2.svg";
+import { Link } from "react-scroll/modules";
+import {HiArrowNarrowRight} from "react-icons/hi"
 export const Main = () => {
   return (
-    <div className="mt-16 flex h-screen w-screen ">
-      {" "}
-      <div className="relative h-full w-full ">
-        <div className="flex flex-col items-center md:items-start md:text-left justify-center text-center h-full w-full p-20 md:pb-64 ">
-          <h1 className="text-xl md:text-2xl -z-40">Welcome to </h1>
-          <h1 className="text-6xl md:text-7xl -z-40 font-normal">Kuta's Pizza Shop</h1>
+    <div name="home" className=" flex h-screen w-screen bg-cover  md:bg-[position:50%]" style={{ backgroundImage: `url("bg_main.jpg")` }}>
+        <div className="flex flex-col items-center md:items-start md:text-left justify-center text-center h-full w-full p-20 py-36 md:pb-64 ">
+          <h1 className="text-2xl md:text-3xl ">Welcome to </h1>
+          <h1 className="text-6xl md:text-7xl  font-normal">Kuta's Pizza Shop</h1>
+          <div className="py-2">
+          <Link  to="product" smooth={true} duration={500}>
+            <button className="text-base md:text-lg text-[#91461d] group border-2 border-[#91461d] px-6 py-3 my-2 flex items-center hover:bg-[#91461d] hover:border-white hover:text-white">
+              {" "}
+              See our products
+              <span className="group-hover:rotate-90 duration-300">
+                <HiArrowNarrowRight className="ml-3 "></HiArrowNarrowRight>
+              </span>
+            </button>
+          </Link>
+        </div>
         </div>
 
-        <Blob className="absolute w-full -z-50 top-0 right-0 transform md:translate-x-1/4 md:-translate-y-[50%] translate-x-[30%] -translate-y-[30%] sm:translate-x-[25%] sm:-translate-y-[30%]" />
-        <Blob1 className="absolute w-full rotate-45 -z-50 bottom-0 left-0 transform md:-translate-x-1/2 md:translate-y-1/2 -translate-x-[40%] translate-y-[40%]" />
-      </div>
+       
     </div>
   );
 };

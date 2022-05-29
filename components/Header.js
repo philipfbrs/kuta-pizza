@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-scroll/modules";
 import { GiFullPizza } from "react-icons/gi";
 const MobileNav = ({ open, setOpen }) => {
   return (
     <div
-      className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${
+      className={`absolute top-0 left-0 h-screen w-screen bg-[#91461d] transform ${
         open ? "-translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
     >
-      <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20">
+      <div className="flex items-center justify-center filter drop-shadow-md bg-[#91461d] h-20">
         {" "}
         {/*logo container*/}
         <a className="text-xl font-bold" href="/">
@@ -15,9 +16,9 @@ const MobileNav = ({ open, setOpen }) => {
         </a>
       </div>
       <div className="flex flex-col ml-4">
-        <a
-          className="text-xl font-medium my-4"
-          href="/about"
+        <Link
+          className="text-xl font-medium my-4 cursor-pointer"
+          to="home"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -25,10 +26,10 @@ const MobileNav = ({ open, setOpen }) => {
           }
         >
           Home
-        </a>
-        <a
-          className="text-xl font-normal my-4"
-          href="/contact"
+        </Link>
+        <Link
+          className="text-xl font-normal my-4 cursor-pointer"
+          to="product"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -36,10 +37,10 @@ const MobileNav = ({ open, setOpen }) => {
           }
         >
           Product
-        </a>
-        <a
-          className="text-xl font-normal my-4"
-          href="/contact"
+        </Link>
+        <Link
+          className="text-xl font-normal my-4 cursor-pointer"
+          to="contact"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
@@ -47,18 +48,18 @@ const MobileNav = ({ open, setOpen }) => {
           }
         >
           Contact us
-        </a>
+        </Link>
       </div>
     </div>
   );
 };
 export const Header = ({ open, setOpen }) => {
   return (
-    <div className="fixed w-screen">
-      <nav className="flex filter drop-shadow-md bg-white px-4 py-4 h-20 items-center">
+    <div className="fixed w-screen bg-[rgba(0,0,0,0.25)]">
+      <nav className="flex filter drop-shadow-md px-4 py-4 h-20 items-center">
         <MobileNav open={open} setOpen={setOpen} />
         <div className="w-3/12 flex items-center">
-          <a className="text-lg font-bold" href="/">
+          <a className="text-lg ml-5 font-bold" href="/">
             KPS
           </a>
         </div>
@@ -87,12 +88,12 @@ export const Header = ({ open, setOpen }) => {
             />
           </div>
 
-          <div className="hidden md:block">
-            <div className="flex gap-8 mr-4">
-            <a className="cursor-pointer">Home</a>
-            <a className="cursor-pointer">Product</a>
-            <a className="cursor-pointer">Contact</a>
-            <GiFullPizza className="cursor-pointer" size={30}/>
+          <div className="hidden md:block ">
+            <div className="flex gap-8 mr-4 opacity-100">  
+            <Link to="home" className="cursor-pointer text-white text-lg">Home</Link>
+            <Link to="product" className="cursor-pointer text-white text-lg">Product</Link>
+            <Link to="contact" className="cursor-pointer text-white text-lg">Contact</Link>
+            <GiFullPizza className="cursor-pointer text-white" size={30}/>
             </div>
           </div>
         </div>

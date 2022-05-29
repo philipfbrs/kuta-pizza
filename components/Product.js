@@ -1,8 +1,8 @@
 import React from "react";
-
+import { Link } from "react-scroll/modules";
 export const Product = () => {
   return (
-    <div className="flex w-screen h-full bg-white">
+    <div name="product" className="flex w-screen h-full bg-white">
       <div className="flex flex-col items-center py-24">
         <h1 className="font-bold text-2xl p-4">Pizza for fun!</h1>
         <p className="px-20 p-4">

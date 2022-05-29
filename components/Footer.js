@@ -2,7 +2,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#985b00] flex h-full w-screen justify-evenly gap-0 md:gap-4 py-10">
+    <div name="contact" className="bg-[#91461d] flex h-full w-screen justify-evenly gap-0 md:gap-4 py-10">
       <div className="p-4 md:p-8 flex flex-col items-center gap-4">
         <h1 className="uppercase font-semibold text-white">Menu</h1>
         <h1>Home</h1>
