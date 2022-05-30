@@ -8,7 +8,7 @@ export default function Home({ allPostsData }) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const imgs = ["./bg_main.jpg", "./pizza-main.jpeg"];
+    const imgs = ["https://ik.imagekit.io/rb3it67b9/bg_main_tqFShJ5ri.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1653882333094", "./pizza-main.jpeg"];
     cacheImage(imgs);
   }, []);
   const cacheImage = async (srcArray) => {
