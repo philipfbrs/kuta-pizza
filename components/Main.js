@@ -4,7 +4,7 @@ import {HiArrowNarrowRight} from "react-icons/hi"
 export const Main = (props) => {
   const {allPostsData} = props;
   return (
-    <div name="home" className=" flex h-screen w-screen bg-cover  md:bg-[position:50%]" style={{ backgroundImage: `url("bg_main.jpg")` }}>
+    <div name="home" className=" flex h-screen w-screen bg-cover  md:bg-[position:50%]" priority="true" style={{ backgroundImage: `url("bg_main.jpg")` }}>
         <div className="flex flex-col items-center md:items-start md:text-left justify-center text-center h-full w-full p-20 py-36 md:pb-64 ">
           <h1 className="text-2xl md:text-3xl ">Welcome to </h1>
           <h1 className="text-6xl md:text-7xl  font-normal">Kuta's Pizza Shop</h1>

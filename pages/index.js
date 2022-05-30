@@ -14,7 +14,6 @@ export default function Home({ allPostsData }) {
   const cacheImage = async (srcArray) => {
     const promise = await srcArray.map((src) => {
       return new Promise(function (resolve, reject) {
-        console.log(src);
         const img = new Image();
         console.log(src);
         img.src = src;
@@ -28,7 +27,7 @@ export default function Home({ allPostsData }) {
   return (
     <>
       {loading ? (
-        <div>test</div>
+        <div>Please wait loading</div>
       ) : (
         <div className="overflow-hidden">
           <Header setOpen={setOpen} open={open} />
