@@ -3,9 +3,8 @@ import { Product } from "../components/Product";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
-import Load from "../styles/loading.module.css";
 
-export default function Home() {
+export default function Home({ allPostsData }) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -15,7 +14,9 @@ export default function Home() {
   const cacheImage = async (srcArray) => {
     const promise = await srcArray.map((src) => {
       return new Promise(function (resolve, reject) {
+        console.log(src);
         const img = new Image();
+        console.log(src);
         img.src = src;
         img.onload = resolve();
         img.onerror = reject();
@@ -25,17 +26,17 @@ export default function Home() {
     setLoading(false);
   };
   return (
-    <div>
+    <>
       {loading ? (
-        <div className={Load.ldsRing}><div></div><div></div><div></div><div></div></div>
+        <div>test</div>
       ) : (
         <div className="overflow-hidden">
           <Header setOpen={setOpen} open={open} />
-          <Main />
+          <Main allPostsData={allPostsData} />
           <Product />
           <Footer />
         </div>
       )}
-    </div>
+    </>
   );
 }
