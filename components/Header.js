@@ -11,7 +11,7 @@ const MobileNav = ({ open, setOpen }) => {
       <div className="flex items-center justify-center filter drop-shadow-md bg-[#91461d] h-20">
         {" "}
         {/*logo container*/}
-        <a className="text-xl font-bold text-white" href="/">
+        <a className="text-xl font-bold" href="/">
           KPS
         </a>
       </div>
@@ -65,24 +65,24 @@ export const Header = ({ open, setOpen }) => {
         </div>
         <div className="w-9/12 flex justify-end items-center">
           <div
-            className="-z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden"
+            className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden"
             onClick={() => {
               setOpen(!open);
             }}
           >
             {/* hamburger button */}
             <span
-              className={`h-1 w-full bg-white rounded-lg transform transition duration-300 ease-in-out ${
+              className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${
                 open ? "rotate-45 translate-y-3.5" : ""
               }`}
             />
             <span
-              className={`h-1 w-full bg-white rounded-lg transition-all duration-300 ease-in-out ${
+              className={`h-1 w-full bg-black rounded-lg transition-all duration-300 ease-in-out ${
                 open ? "w-0" : "w-full"
               }`}
             />
             <span
-              className={`h-1 w-full bg-white rounded-lg transform transition duration-300 ease-in-out ${
+              className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${
                 open ? "-rotate-45 -translate-y-3.5" : ""
               }`}
             />
