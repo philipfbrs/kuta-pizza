@@ -8,14 +8,13 @@ export default function Home({ allPostsData }) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const imgs = ["https://ik.imagekit.io/rb3it67b9/bg_main_tqFShJ5ri.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1653882333094", "./pizza-main.jpeg"];
+    const imgs = ["https://ik.imagekit.io/rb3it67b9/bg_main_tqFShJ5ri.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1653882333094", "https://ik.imagekit.io/rb3it67b9/pizza-main_oAc0RlPJw.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1653882760689"];
     cacheImage(imgs);
   }, []);
   const cacheImage = async (srcArray) => {
     const promise = await srcArray.map((src) => {
       return new Promise(function (resolve, reject) {
         const img = new Image();
-        console.log(src);
         img.src = src;
         img.onload = resolve();
         img.onerror = reject();
@@ -27,7 +26,7 @@ export default function Home({ allPostsData }) {
   return (
     <>
       {loading ? (
-        <div>Please wait loading</div>
+        null
       ) : (
         <div className="overflow-hidden">
           <Header setOpen={setOpen} open={open} />
