@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Product } from "../components/Product";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
+import Head from "next/head";
 import { Footer } from "../components/Footer";
 
 export default function Home({ allPostsData }) {
@@ -9,7 +10,14 @@ export default function Home({ allPostsData }) {
 
   return (
     <div className="overflow-hidden">
-      <link  rel="preload" as="image" crossOrigin="anonymous" href="bg_main_tqFShJ5ri.jpg" />
+      <Head>
+        <link
+          rel="preload"
+          as="image"
+          crossOrigin="anonymous"
+          href="bg_main_tqFShJ5ri.jpg"
+        />
+      </Head>
       <Header setOpen={setOpen} open={open} />
       <Main allPostsData={allPostsData} />
       <Product />
