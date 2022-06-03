@@ -16,6 +16,11 @@ export default function Home({ allPostsData }) {
           as="image"
           href="bg_main_tqFShJ5ri.jpg"
         />
+        <link
+          rel="preload"
+          as="image"
+          href="pizza-main_oAc0RlPJw.jpeg"
+        />
       </Head>
       <div className="overflow-hidden">
         <Header setOpen={setOpen} open={open} />
