@@ -59,7 +59,7 @@ export const Header = ({ open, setOpen }) => {
       <nav className="flex filter drop-shadow-md px-4 py-4 h-20 items-center">
         <MobileNav open={open} setOpen={setOpen} />
         <div className="w-3/12 flex items-center">
-          <a className="text-lg ml-5 font-bold" href="/">
+          <a className="text-lg ml-5 font-bold text-white" href="/">
             KPS
           </a>
         </div>
@@ -89,11 +89,22 @@ export const Header = ({ open, setOpen }) => {
           </div>
 
           <div className="hidden md:block ">
-            <div className="flex gap-8 mr-4 opacity-100">  
-            <Link to="home" className="cursor-pointer text-white text-lg">Home</Link>
-            <Link to="product" className="cursor-pointer text-white text-lg">Product</Link>
-            <Link to="contact" className="cursor-pointer text-white text-lg">Contact</Link>
-            <GiFullPizza className="cursor-pointer text-white" size={30}/>
+            <div className="flex gap-8 mr-4 opacity-100">
+              <Link to="home" className="cursor-pointer text-white text-lg">
+                Home
+              </Link>
+              <Link to="product" className="cursor-pointer text-white text-lg">
+                Product
+              </Link>
+              <Link to="contact" className="cursor-pointer text-white text-lg">
+                Contact
+              </Link>
+              <div className="relative text-right">
+                <a className="absolute  bg-red-600 -top-2 -right-1 p-1 text-sm text-white">
+                  0
+                </a>
+                <GiFullPizza className="cursor-pointer text-white" size={30} />
+              </div>
             </div>
           </div>
         </div>
