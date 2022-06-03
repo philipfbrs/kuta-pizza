@@ -9,7 +9,7 @@ export default function Home({ allPostsData }) {
 
   return (
     <div className="overflow-hidden">
-      <link  rel="preload" as="image" crossOrigin="Access-Control-Allow-Origin" href="bg_main_tqFShJ5ri.jpg" />
+      <link  rel="preload" as="image" crossOrigin="anonymous" href="bg_main_tqFShJ5ri.jpg" />
       <Header setOpen={setOpen} open={open} />
       <Main allPostsData={allPostsData} />
       <Product />
