@@ -112,7 +112,7 @@ export const Header = ({ open, setOpen }) => {
           </div>
         </div>
 
-        <div className="flex justify-end items-cente mr-8">
+        <div className="flex justify-end items-cente mr-4">
           <div className="relative text-right cursor-pointer">
             <a className="absolute  bg-red-600 -top-2 -right-1 p-1 text-sm text-white">
               0
