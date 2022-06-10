@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
           href="pizza-main_oAc0RlPJw.jpeg"
         />
       </Head>
-      <div className="overflow-hidden">
+      <div className="">
         <Header setOpen={setOpen} open={open} />
         <Main allPostsData={allPostsData} />
         <Product />
