@@ -9,7 +9,7 @@ export const Home = () => {
       <h1 className="text-2xl md:text-3xl ">Welcome to </h1>
       <h1 className="text-6xl md:text-7xl  font-normal">Kuta's Pizza Shop</h1>
       <div className="py-2">
-      <Link  to="product" smooth={true}>
+      <Link  to="product">
         <button className="text-base md:text-lg text-[#91461d] group border-2 border-[#91461d] px-6 py-3 my-2 flex items-center hover:bg-[#91461d] hover:border-white hover:text-white">
           {" "}
           See our products
