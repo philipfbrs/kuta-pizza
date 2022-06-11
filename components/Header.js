@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-scroll/modules";
 import { GiFullPizza } from "react-icons/gi";
-import {AiFillInstagram,AiFillMail} from "react-icons/ai"
+import { AiFillInstagram, AiFillMail } from "react-icons/ai";
 const MobileNav = ({ open, setOpen }) => {
   return (
     <div
-      className={`z-50 absolute top-0 left-0 h-screen w-screen bg-[#91461d] transform ${
+      className={`md:hidden z-50 absolute top-0 left-0 h-screen w-screen bg-[#91461d] transform ${
         open ? "-translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
     >
@@ -60,19 +60,16 @@ const MobileNav = ({ open, setOpen }) => {
 export const Header = ({ open, setOpen }) => {
   return (
     <div className="fixed w-screen bg-[rgba(0,0,0,0.25)]">
-      <div className="absolute ">
-        <div className="-z-50 flex w-screen h-20 justify-center items-center">
+      <nav className="flex filter drop-shadow-md h-20 items-center justify-between">
+        <MobileNav open={open} setOpen={setOpen} />
+        <div className="absolute left-[50%] p-1">
           <a
-            className="-z-50 text-4xl font-bold border-2 p-2 text-orange-700 border-orange-700 shadow-md rounded-xl cursor-pointer "
+            className="relative -left-[50%] -z-50 text-4xl font-bold border-2 p-1 text-orange-700 border-orange-700 shadow-md rounded-xl cursor-pointer "
             href="/"
           >
             KPS
           </a>
         </div>
-      </div>
-      <nav className="flex filter drop-shadow-md h-20 items-center justify-between">
-        <MobileNav open={open} setOpen={setOpen} />
-
         <div className=" ml-4 flex justify-between">
           <div
             className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden cursor-pointer"
@@ -120,7 +117,7 @@ export const Header = ({ open, setOpen }) => {
             <a className="absolute  bg-red-600 -top-2 -right-1 p-1 text-sm text-white">
               0
             </a>
-            <GiFullPizza className="cursor-pointer text-white md:text-4xl text-5xl md:hover:text-5xl" />
+            <GiFullPizza className="cursor-pointer text-white text-[44px] md:text-4xl md:hover:text-5xl" />
           </div>
         </div>
       </nav>
