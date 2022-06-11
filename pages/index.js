@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Product } from "../components/Product";
 import { Header } from "../components/Header";
 import { Main } from "../components/Main";
 import Head from "next/head";
@@ -11,16 +10,15 @@ export default function Home({ pizza }) {
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <link rel="preload" as="image" href="bg_main_tqFShJ5ri.jpg" />;
         {pizza.map((element) => {
-          <link rel="preload" as="image" href={element.img} />;
+          <link rel="preload" as="image" href={element.linkImagen} />;
         })}
-      </Head> */}
+      </Head>
       <div className="overflow-hidden">
-        <Header setOpen={setOpen} open={open} />
-        <Main />
-        <Product getPizzas={pizza} />
+        <Header setOpen={setOpen} open={open}  />
+        <Main getPizzas = {pizza}/>
         <Footer />
       </div>
     </>
@@ -31,7 +29,6 @@ export async function getStaticProps(context) {
   const pizza = items.filter((el, index) => {
     return index < items.length - 17;
   });
-  console.log(pizza)
   return {
     props: { pizza },
   };
