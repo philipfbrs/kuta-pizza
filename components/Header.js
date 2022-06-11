@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll/modules";
 import { GiFullPizza } from "react-icons/gi";
+import {AiFillInstagram,AiFillMail} from "react-icons/ai"
 const MobileNav = ({ open, setOpen }) => {
   return (
     <div
@@ -60,9 +61,9 @@ export const Header = ({ open, setOpen }) => {
   return (
     <div className="fixed w-screen bg-[rgba(0,0,0,0.25)]">
       <div className="absolute ">
-        <div className="flex w-screen h-20 justify-center items-center">
+        <div className="-z-50 flex w-screen h-20 justify-center items-center">
           <a
-            className="z-50 text-4xl font-bold border-2 p-2 text-orange-700  border-orange-700 shadow-md rounded-xl cursor-pointer "
+            className="-z-50 text-4xl font-bold border-2 p-2 text-orange-700 border-orange-700 shadow-md rounded-xl cursor-pointer "
             href="/"
           >
             KPS
@@ -112,12 +113,14 @@ export const Header = ({ open, setOpen }) => {
           </div>
         </div>
 
-        <div className="flex justify-end items-cente mr-4">
+        <div className="flex justify-end items-center md:mr-6 mr-4 gap-6">
+          <AiFillInstagram className="text-white md:block hidden cursor-pointer text-4xl hover:text-5xl"></AiFillInstagram>
+          <AiFillMail className="text-white md:block hidden cursor-pointer text-4xl hover:text-5xl"></AiFillMail>
           <div className="relative text-right cursor-pointer">
             <a className="absolute  bg-red-600 -top-2 -right-1 p-1 text-sm text-white">
               0
             </a>
-            <GiFullPizza className="cursor-pointer text-white" size={40} />
+            <GiFullPizza className="cursor-pointer text-white md:text-4xl text-5xl md:hover:text-5xl" />
           </div>
         </div>
       </nav>
